@@ -1,0 +1,27 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trello Power-Up</title>
+    <script src="https://p.trellocdn.com/power-up.min.js"></script>
+    <script>
+        TrelloPowerUp.initialize({
+            'board-buttons': function(t, options) {
+                return [{
+                    // we can either provide a button that has a callback function
+                    text: 'My Power-Up Button',
+                    callback: function(t) {
+                        return t.popup({
+                            title: "My Power-Up Popup",
+                            url: './popup.html'
+                        });
+                    }
+                }];
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>Hello, Trello Power-Up!</h1>
+</body>
+</html>
